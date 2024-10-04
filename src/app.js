@@ -28,10 +28,10 @@ app.use(cors({
     origin: 'http://localhost:5173'
   }));
 
-app.listen(port, (req, res) => {
+app.listen(port, () => {
   console.log("Connected on", port);
 });
 
-app.get("/", (req, res) => {
-  res.send('{"message":"Hello world"}');
+app.get("/api/hello", (req, res) => {
+  res.json({message : "Hello world"});
 });
